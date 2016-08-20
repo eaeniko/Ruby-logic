@@ -1,20 +1,12 @@
 puts "Bem vindo ao jogo da adivinhação"
-puts "Qual é o seu nome?"
+puts "\nQual é o seu nome?"
 nome = gets
 
-puts
-puts
-puts
+puts "\n\n\nComeçaremos o jogos para você, " + nome
 
-puts "Começaremos o jogos para você, " + nome
-
-puts "Escolhendo um número secreto entre 0 e 200..."
+puts "\nEscolhendo um número secreto entre 0 e 200..."
 numero_secreto = 175
-puts "Escolhido... que tal adivinhar hoje nosso número secreto?"
-
-puts
-puts
-puts
+puts "Escolhido... que tal adivinhar hoje nosso número secreto?\n\n\n"
 
 puts "Tentativa 1"
 puts "Entre com o numero"
