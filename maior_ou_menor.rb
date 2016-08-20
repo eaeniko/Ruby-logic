@@ -8,10 +8,11 @@ puts "\nEscolhendo um número secreto entre 0 e 200..."
 numero_secreto = 175
 puts "Escolhido... que tal adivinhar hoje nosso número secreto?\n\n\n"
 
+limite_de_tentativas = 5
 
-for  tentativas in 1..3
+for  tentativas in 1..limite_de_tentativas
 
-	puts "\n\nTentativa " + tentativas.to_s + "de 3"
+	puts "\n\nTentativa " + tentativas.to_s + "de " + limite_de_tentativas
 	puts "Entre com o numero"
 	chute = gets
 	puts "Será que acertou? você chutou " + chute
