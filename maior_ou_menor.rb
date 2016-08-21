@@ -1,7 +1,14 @@
 def boas_vindas
-
-	puts "Bem vindo ao jogo da adivinhação"
-	puts "\nQual é o seu nome?"
+	puts
+    puts "        P  /_\  P                              "
+    puts "       /_\_|_|_/_\                             "
+    puts "   n_n | ||. .|| | n_n         Bem vindo ao    "
+    puts "   |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação!"
+    puts "  |' '  |  |_|  |'  ' |                        "
+    puts "  |_____| ' _ ' |_____|                        " 
+    puts "        \__|_|__/                              "
+    puts
+    puts "Qual é o seu nome?"
 	nome = gets.strip
 	puts "\n\n\nComeçaremos o jogos para você, #{nome}"
 
@@ -11,8 +18,9 @@ end
 
 def pede_dificuldade
 
-	puts "Qual o nivel de dificuldade que deseja? (1 fácil, 5 difícil)"
-
+	puts "Qual o nível de dificuldade?"
+    puts "(1) Muito fácil (2) Fácil (3) Normal (4) Difícil (5) Impossível"
+    puts "Escolha: "
 	dificuldade = gets.to_i
 end
 def sorteia_num_secreto(dificuldade)
@@ -40,6 +48,30 @@ def sorteia_num_secreto(dificuldade)
 	return sorteado
 end
 
+def ganhou
+
+	puts
+    puts "             OOOOOOOOOOO               "
+    puts "         OOOOOOOOOOOOOOOOOOO           "
+    puts "      OOOOOO  OOOOOOOOO  OOOOOO        "
+    puts "    OOOOOO      OOOOO      OOOOOO      "
+    puts "  OOOOOOOO  #   OOOOO  #   OOOOOOOO    "
+    puts " OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   "
+    puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  "
+    puts "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  "
+    puts "OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  "
+    puts " OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   "
+    puts "  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    "
+    puts "    OOOOO   OOOOOOOOOOOOOOO   OOOO     "
+    puts "      OOOOOO   OOOOOOOOO   OOOOOO      "
+    puts "         OOOOOO         OOOOOO         "
+    puts "             OOOOOOOOOOOO              "
+    puts
+    puts "               Acertou!                "
+    puts
+	
+end
+
 def pede_um_numero(chutes, tentativas, limite_de_tentativas)
 #nTentativa " + tentativas.to_s + " de " + limite_de_tentativas.to_s
 	puts "\nTentativa #{tentativas} de #{limite_de_tentativas}"
@@ -57,7 +89,8 @@ def verifica_se_acertou(numero_secreto, chute)
 	acertou = numero_secreto == chute
 
 	if acertou
-		puts "\nAcertou!"
+		
+		ganhou
 		return true
 
 	end
@@ -84,7 +117,7 @@ def joga(nome, dificuldade)
 		chutes << chute
 
 		if nome == "Nikolai"
-			puts "Acertou!"
+			ganhou
 			break		
 		end
 
@@ -104,9 +137,13 @@ def quer_jogar
 	quer_jogar.upcase == "S"
 	
 end
+
 nome = boas_vindas
 dificuldade = pede_dificuldade
 
-while quer_jogar
+loop do
 	joga nome, dificuldade
+	if !quer_jogar
+		break
+	end
 end
