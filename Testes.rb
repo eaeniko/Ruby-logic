@@ -14,16 +14,23 @@ puts "\n\n"
 chutes = []
 
 chute = 176
-tentativa = 1
-chutes[tentativa -1] = chute
+chutes << chute
 
 chute = 100
 tentativa = 2
-chutes[tentativa -1] = chute
+chutes << chute
 
-puts chutes[0]
-puts chutes[1]
+chute = 150
+chutes << chute
 
-for contador in 1..tentativa
-	puts "Chute: " + chutes[contador - 1].to_s
+puts chutes.size
+for chute in chutes
+	puts chute
 end
+
+puts "\n"
+
+puts "Qual seu nome?"
+nome = gets.strip
+puts "#{nome} tem #{nome.size} caracteres"
+# puts nome + " tem " + nome.size.to_s + " caracteres"

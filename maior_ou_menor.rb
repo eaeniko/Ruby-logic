@@ -2,9 +2,9 @@ def boas_vindas
 
 	puts "Bem vindo ao jogo da adivinhação"
 	puts "\nQual é o seu nome?"
-	nome = gets
+	nome = gets.strip
 
-	puts "\n\n\nComeçaremos o jogos para você, " + nome
+	puts "\n\n\nComeçaremos o jogos para você, #{nome}"
 
 end
 def sorteia_num_secreto
@@ -17,11 +17,12 @@ def sorteia_num_secreto
 end
 
 def pede_um_numero(chutes, tentativas, limite_de_tentativas)
-	puts "\n\nTentativa " + tentativas.to_s + " de " + limite_de_tentativas.to_s
-	puts "Chutes até agora: " + chutes.to_s
+#nTentativa " + tentativas.to_s + " de " + limite_de_tentativas.to_s
+	puts "\nTentativa #{tentativas} de #{limite_de_tentativas}"
+	puts "Chutes até agora: #{chutes} "
 	puts "Entre com o numero"
-	chute = gets
-	puts "Será que acertou? você chutou " + chute
+	chute = gets.strip
+	puts "Será que acertou? você chutou #{chute}"
 
 	return chute.to_i
 
@@ -52,16 +53,15 @@ numero_secreto = sorteia_num_secreto
 
 limite_de_tentativas = 5
 chutes = []
-total_de_chutes = 0
 
 for  tentativas in 1..limite_de_tentativas
 
 	chute = pede_um_numero(chutes, tentativas, limite_de_tentativas)
-	chutes[total_de_chutes] = chute
-	total_de_chutes = total_de_chutes + 1
+	chutes << chute
 
 	if verifica_se_acertou(numero_secreto, chute)
 		break
 	end
 
 end
+
