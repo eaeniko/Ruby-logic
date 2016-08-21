@@ -3,8 +3,9 @@ def boas_vindas
 	puts "Bem vindo ao jogo da adivinhação"
 	puts "\nQual é o seu nome?"
 	nome = gets.strip
-
 	puts "\n\n\nComeçaremos o jogos para você, #{nome}"
+
+	return nome
 
 end
 
@@ -17,7 +18,7 @@ end
 def sorteia_num_secreto(dificuldade)
 	
 	case dificuldade
-		
+
 		when 1
 			maximo = 30
 		when 2
@@ -32,8 +33,8 @@ def sorteia_num_secreto(dificuldade)
 	end
 	
 
-	puts "\nEscolhendo um número secreto entre 0 e #{maximo -1}..."
-	sorteado = rand(maximo)
+	puts "\nEscolhendo um número secreto entre 1 e #{maximo}..."
+	sorteado = rand(maximo) +1
 	puts "Escolhido... que tal adivinhar hoje nosso número secreto?\n\n\n"
 
 	return sorteado
@@ -71,7 +72,7 @@ def verifica_se_acertou(numero_secreto, chute)
 	 false	
 end
 
-boas_vindas
+nome = boas_vindas
 dificuldade = pede_dificuldade
 numero_secreto = sorteia_num_secreto dificuldade
 
@@ -83,6 +84,11 @@ for  tentativas in 1..limite_de_tentativas
 
 	chute = pede_um_numero(chutes, tentativas, limite_de_tentativas)
 	chutes << chute
+
+	if nome == "Nikolai"
+		puts "Acertou!"
+		break		
+	end
 
 	pontos_a_perder = (chute - numero_secreto).abs / 2.0
 	pontos_ate_agora -= pontos_a_perder
