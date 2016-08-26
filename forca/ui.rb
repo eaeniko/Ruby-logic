@@ -1,6 +1,5 @@
 def avisa_campeao_atual(dados)
-	puts "Nosso campeão atual é #{dados[0]} com #{dados[1] pontos}"
-		
+	puts "Nosso campeão atual é #{dados[0]} com #{dados[1]} pontos."	
 end
 
 def avisa_pontos_totais(pontos_totais)
@@ -32,7 +31,9 @@ def avisa_pontos(pontos_ate_agora)
 end
 
 def da_boas_vindas
-	puts "Bem vindo ao jogo da forca"
+	puts "/****************/"
+	puts "/ Jogo da Forca */"
+	puts "/****************/"
 	puts "Qual é o seu nome?"
 	nome = gets.strip
 	puts "\n\n\n"
@@ -40,7 +41,29 @@ def da_boas_vindas
 	nome
 end
 
-def avisa_escolhando_palavra
+def desenha_forca(erros)
+	cabeca = "   "
+	bracos = "   "
+	pernas = "   "
+	corpo = " "
+	if erros >= 1
+		cabeca = "(_)"
+	end
+	if erros >= 2
+		bracos = " | "
+		corpo = "|"
+	end
+	if erros >= 3
+		bracos = "\\|/"		
+	end
+	if erros >= 4
+		pernas = "/ \\"
+	end
+	
+
+end
+
+def avisa_escolhendo_palavra
 	puts "Escolhendo uma palavra secreta..."	
 end
 
@@ -58,8 +81,9 @@ end
 
 def cabecalho_de_tentativa(chutes, erros, mascara)
 	puts "\n\n\n\n"
+	desenha_forca erros
 	puts "Palavra secreta: #{mascara}"
-	puts "Erros até agoar: #{erros}"
+	puts "Erros até agora: #{erros}"
 	puts "Chutes até agora: #{chutes}"
 end
 

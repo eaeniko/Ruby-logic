@@ -17,12 +17,12 @@ def salva_rank(nome, pontos_totais)
 end
 
 def le_rank
-	conteudo = File.read "rank.txt"
-	conteudo.split. "\n"
+	conteudo_atual = File.read "rank.txt"
+	dados = conteudo_atual.split("\n")
 end
 
 def escolhe_palavra_secreta
-	avisa_escolhando_palavra
+	avisa_escolhendo_palavra
 	texto = File.read("dicionario.txt")
 	todas_as_palavras = texto.split "\n"
 	numero_escolhido = rand(todas_as_palavras.size)
@@ -31,7 +31,7 @@ def escolhe_palavra_secreta
 end
 
 def escolhe_palavra_secreta_sem_consumir_muita_memoria
-	avisa_escolhando_palavra
+	avisa_escolhendo_palavra
 	arquivo = File.new("dicionario.txt")
 	quantidade_de_palavras = arquivo.gets.to_i
 	numero_escolhido = rand(quantidade_de_palavras)
