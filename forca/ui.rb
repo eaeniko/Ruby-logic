@@ -1,3 +1,7 @@
+def avisa_pontos_totais(pontos_totais)
+	puts "Você possui #{pontos_totais} pontos."
+end
+
 def avisa_chute_efetuado chute
 	puts "Você já chutou #{chute}"	
 end
