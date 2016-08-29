@@ -18,6 +18,20 @@ def encontra_jogador(mapa)
 	#nao achei
 end
 
+def calcula_nova_posicao(heroi, direcao)
+	case direcao
+		when "W"
+			heroi[0] -= 1
+		when "S"
+			heroi[0] += 1
+		when "A"
+			heroi[1] -= 1
+		when "D"
+			heroi[1] += 1
+	end
+	
+end
+
 def joga(nome)
 	mapa = le_mapa 1
 
@@ -25,16 +39,9 @@ def joga(nome)
 		desenha_mapa mapa
 		direcao = pede_movimento
 		heroi = encontra_jogador mapa
-		case direcao
-			when "W"
-				heroi[0] -= 1
-			when "S"
-				heroi += 1
-			when "A"
-				heroi -= 1
-			when "D"
-				heroi += 1
-		end						
+		mapa[heroi[0]] [heroi[1]] = " "
+		nova_posicao = calcula_nova_posicao heroi, direcao
+		mapa[nova_posicao[0]] [nova_posicao[1]] = "H"						
 	end	
 end
 
