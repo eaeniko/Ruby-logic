@@ -11,13 +11,12 @@ def encontra_jogador(mapa)
 	caractere_heroi = "H"
 	for linha = 0..(mapa.size -1)
 		linha_atual = mapa[linha]
-		for coluna = 0..(linha_atual.size-1)
-			heroi_esta_aqui = linha_atual[coluna] == caractere_heroi
-			if heroi_esta_aqui
-					# achei linha e coluna!
-			end
+		coluna_do_heroi = linha_atual.index caractere_heroi
+		if coluna_do_heroi
+			# achei linha e coluna!
 		end
 	end	
+	#nao achei
 end
 
 def joga(nome)
