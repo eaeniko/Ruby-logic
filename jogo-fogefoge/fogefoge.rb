@@ -12,7 +12,7 @@ def encontra_jogador(mapa)
 	mapa.each_with_index do |linha_atual, linha|
 		coluna_do_heroi = linha_atual.index caractere_heroi
 		if coluna_do_heroi
-			# achei linha e coluna!
+			return [linha, coluna_do_heroi]
 		end
 	end	
 	#nao achei
@@ -23,7 +23,18 @@ def joga(nome)
 
 	while true
 		desenha_mapa mapa
-		direcao = pede_movimento			
+		direcao = pede_movimento
+		heroi = encontra_jogador mapa
+		case direcao
+			when "W"
+				heroi[0] -= 1
+			when "S"
+				heroi += 1
+			when "A"
+				heroi -= 1
+			when "D"
+				heroi += 1
+		end						
 	end	
 end
 
