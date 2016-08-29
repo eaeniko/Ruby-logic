@@ -1,8 +1,32 @@
 require_relative 'ui'
 
-def joga(nome)
-	#nosso jogo aqui
+def le_mapa(numero)
+	arquivo = "mapa#{numero}.txt"
+	texto = File.read arquivo
+	mapa = texto.split "\n"
 	
+end
+
+def encontra_jogador(mapa)
+	for linha = 0..(mapa.size -1)
+		if mapa[linha].include? "H"
+			for coluna = 0..(mapa[linha].size-1)
+				if mapa[linha] [coluna] == "H"
+
+				end
+			end
+		end
+	end
+	
+end
+
+def joga(nome)
+	mapa = le_mapa 1
+
+	while true
+		desenha_mapa mapa
+		direcao = pede_movimento			
+	end	
 end
 
 def inicia_fogefoge
