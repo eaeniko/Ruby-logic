@@ -20,16 +20,15 @@ end
 
 def calcula_nova_posicao(heroi, direcao)
 	heroi = heroi.dup
-	case direcao
-		when "W"
-			heroi[0] -= 1
-		when "S"
-			heroi[0] += 1
-		when "A"
-			heroi[1] -= 1
-		when "D"
-			heroi[1] += 1
-	end
+	movimentos = {
+		"W" => [-1, 0],
+		"S" => [+1, 0],
+		"A" => [0, -1],
+		"D" => [0, +1]
+	}
+	movimentos = movimentos[direcao]
+	heroi[0] += movimentos[0]
+	heroi[1] += movimentos[1]
 	heroi
 end
 
