@@ -15,4 +15,9 @@ class Heroi
 		novo_heroi.coluna += movimentos[1]
 		novo_heroi
 	end
+
+	def to_array
+		return [linha,coluna]
+		
+	end
 end
