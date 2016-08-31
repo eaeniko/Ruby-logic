@@ -104,8 +104,8 @@ def joga(nome)
 			next
 		end
 
-		mapa [heroi.coluna][heroi.linha] = " "
-		mapa [nova_posicao.linha][nova_posicao.coluna] = "H"
+		heroi.remove_do mapa
+		nova_posicao.coloca_no mapa
 
 		mapa = move_fantasmas mapa
 		if jogador_perdeu? mapa

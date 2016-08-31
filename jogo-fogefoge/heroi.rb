@@ -18,6 +18,14 @@ class Heroi
 
 	def to_array
 		return [linha,coluna]
+	end
+
+	def remove_do(mapa)
+		mapa [linha][coluna] = " "		
+	end
+
+	def coloca_no(mapa)
+		mapa[linha][coluna] = "H"
 		
 	end
 end
