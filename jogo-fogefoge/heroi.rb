@@ -16,6 +16,10 @@ class Heroi
 		novo_heroi
 	end
 
+	def direta
+		calcula_nova_posicao "D"		
+	end
+
 	def to_array
 		return [linha,coluna]
 	end
