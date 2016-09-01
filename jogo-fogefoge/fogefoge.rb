@@ -93,10 +93,10 @@ def jogador_perdeu?(mapa)
 end
 
 def remove(mapa, posicao, quantidade)
-	for direita in 1..quantidade
-		posicao = posicao.direita "D"
-		posicao.remove_do mapa = " "
-	end	
+		return if quantidade == 0
+		posicao = posicao.direita
+		posicao.remove_do mapa
+		remove mapa, posicao, quantidade -1
 end
 
 def joga(nome)

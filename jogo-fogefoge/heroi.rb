@@ -16,7 +16,7 @@ class Heroi
 		novo_heroi
 	end
 
-	def direta
+	def direita
 		calcula_nova_posicao "D"		
 	end
 
